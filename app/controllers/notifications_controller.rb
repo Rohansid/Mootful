@@ -12,7 +12,7 @@ class NotificationsController < ApplicationController
     @body = if params[:Body].nil? then '' else params[:Body].downcase end
     begin
       if @new_subscriber
-        output = "Thanks for contacting TWBC! Text 'subscribe' if you would to receive updates via text message."
+        output = "Thanks for contacting Mootful! Text 'subscribe' if you would to receive one article per day, via text message."
       else
         # Process the command from our Subscriber
         output = process_message(@body, @subscriber)
@@ -58,7 +58,7 @@ class NotificationsController < ApplicationController
         # Respond appropriately
         output = "You are now subscribed for updates."
         if !subscriber.subscribed
-          output = "You have unsubscribed from notifications. Test 'subscribe' to start receieving updates again"
+          output = "You have unsubscribed from Mootful. Test 'subscribe' to start receieving updates again"
         end
       else
         # If we don't recognize the command, text back with the list of
